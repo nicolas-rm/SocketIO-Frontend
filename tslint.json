@@ -95,7 +95,7 @@
       }
     },
     "typedef": [
-      true,
+      false,
       "call-signature"
     ],
     "typedef-whitespace": {
@@ -144,7 +144,9 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "disable-next-line": false,
+    "no-trailing-whitespace": false
   },
   "rulesDirectory": [
     "codelyzer"
