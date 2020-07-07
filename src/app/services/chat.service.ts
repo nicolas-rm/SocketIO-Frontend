@@ -20,4 +20,11 @@ export class ChatService {
       // Manda El Mensaje Al Socket
       this.wsServices.emit('mensaje', payload);
    }
+
+
+   getMessages() {
+      // Configuracion Del Listen.
+      // Puede Ser Cualquier Cosa
+      return this.wsServices.listen('mensaje-nuevo');
+   }
 }
