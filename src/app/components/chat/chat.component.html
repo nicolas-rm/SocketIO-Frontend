@@ -1,8 +1,28 @@
-<h1> Mensajes </h1>
-
+<h3 class="card-title p-5">Plantilla De Chat</h3>
 <hr>
 
+<div id="chat-mensajes" class="card">
+   <div class="container">
+      <li class="mensaje-text" *ngFor="let mensaje of mensajes; let i=index">
+         <h5 class="card-text">{{ mensaje.de | uppercase}}</h5>
+         <div class="alert alert-info d-inline-block">
+            {{ mensaje.cuerpo }}
+         </div>
+      </li>
+   </div>
+</div>
+
 <form (ngSubmit)="enviar()">
-   <input [(ngModel)]="texto" class="form-control" type="text" name="texto" autofocus name="texto"
-      placeholder="Mensaje..." autocomplete="off">
+   <!-- <div class="input-group"> -->
+
+   <div class="input-group">
+      <input [(ngModel)]="texto" type="text" class="form-control chat-input" placeholder="Mensaje..." name="texto"
+         autofocus autocomplete="off">
+
+      <div class="input-group-append">
+         <a class="btn btn-outline-info chat-input"><i class="fa fa-paper-plane"></i></a>
+      </div>
+      <!-- </div> -->
+   </div>
+
 </form>
