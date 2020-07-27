@@ -13,8 +13,6 @@
 </div>
 
 <form (ngSubmit)="enviar()">
-   <!-- <div class="input-group"> -->
-
    <div class="input-group">
       <input [(ngModel)]="texto" type="text" class="form-control chat-input" placeholder="Mensaje..." name="texto"
          autofocus autocomplete="off">
@@ -22,7 +20,5 @@
       <div class="input-group-append">
          <a class="btn btn-outline-info chat-input"><i class="fa fa-paper-plane"></i></a>
       </div>
-      <!-- </div> -->
    </div>
-
 </form>

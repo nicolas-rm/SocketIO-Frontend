@@ -1,0 +1,15 @@
+<h3 class="card-title p-5">Plantilla De Chat</h3>
+<hr>
+
+<div class="row justify-content-center">
+   <div class="col-md9">
+      <form (ngSubmit)="ingresar()">
+         <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" placeholder="Nombre De Usuario"
+            autofocus>
+      </form>
+
+      <button [disabled]="nombre.trim().length === 0" class="btn btn-primary btn-block mt-2" (click)="ingresar()">
+         Ingresar
+      </button>
+   </div>
+</div>
