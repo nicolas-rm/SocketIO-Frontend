@@ -3,11 +3,11 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Rout
 import { Observable } from 'rxjs';
 import { WebsocketsService } from '../services/websockets.service';
 
+
 @Injectable({
    providedIn: 'root'
 })
-export class UsuarioGuardGuard implements CanActivate {
-
+export class LoginGuard implements CanActivate {
    constructor(public wsServices: WebsocketsService, private router: Router) {
 
    }
@@ -15,12 +15,11 @@ export class UsuarioGuardGuard implements CanActivate {
    canActivate(): boolean {
 
       if (this.wsServices.getUsuario()) {
-         // this.router.navigate(['/mensajes']);
+         this.router.navigate(['/mensajes']);
          return true;
       } else {
          this.router.navigate(['/']);
          return false;
       }
    }
-
 }

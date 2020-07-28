@@ -13,7 +13,7 @@ export class ChatService {
 
       // Todo El Cuerpo De Lo Que Se Envia AL Socket
       const payload = {
-         de: 'Nicolas RM',
+         de: this.wsServices.usuario.nombre,
          cuerpo: mensaje
       };
 
