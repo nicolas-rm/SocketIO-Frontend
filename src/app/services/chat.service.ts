@@ -27,4 +27,8 @@ export class ChatService {
       // Puede Ser Cualquier Cosa
       return this.wsServices.listen('mensaje-nuevo');
    }
+
+   getMessagesPrivate() {
+      return this.wsServices.listen('mensaje-privado');
+   }
 }

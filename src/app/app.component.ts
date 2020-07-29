@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from './services/chat.service';
+import { WebsocketsService } from './services/websockets.service';
 // import { WebsocketsService } from './services/websockets.service';
 // import { ChatService } from './services/chat.service';
 
@@ -11,11 +13,12 @@ export class AppComponent implements OnInit {
    title = 'SocketIO-Frontend';
 
 
-   constructor(/* public wsServices: WebsocketsService, public chatServices: ChatService */) {
+   constructor(private wsServices: WebsocketsService, private chatServices: ChatService) {
    }
 
    ngOnInit() {
-      // console.log('Inicio Correctamente El Servicio');
-      // this.chatServices.sendMessage('Hola Desde Angular');
+      this.chatServices.getMessagesPrivate().subscribe((mensaje) => {
+         console.log('Mensaje Privado: ', mensaje);
+      });
    }
 }
