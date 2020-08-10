@@ -22,6 +22,7 @@ export class WebsocketsService {
       this.socket.on('connect', () => {
          console.log('Conectado Al Servidor: ', 'sockets');
          this.socketStatus = true;
+         this.cargarStorage();
       });
 
       // Desconectar Cliente
